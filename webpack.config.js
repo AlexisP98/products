@@ -12,6 +12,10 @@ module.exports = {
     filename: './js/global.js'
   },
 
+  devServer: {
+    contentBase: './dist',
+  },
+
   module: {
     rules: [
       { // sass / scss loader for webpack
