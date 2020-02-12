@@ -12,10 +12,6 @@ module.exports = {
     filename: './js/global.js'
   },
 
-  devServer: {
-    contentBase: './dist',
-  },
-
   module: {
     rules: [
       { // sass / scss loader for webpack
@@ -52,7 +48,7 @@ module.exports = {
       onBeforeRender: function (Handlebars, data) { },
       onBeforeSave: function (Handlebars, resultHtml, filename) { },
       onDone: function (Handlebars, filename) { }
-  })
+    })
   ],
 
   watch: true,
