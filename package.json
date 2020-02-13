@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode production",
-    "server": "webpack-dev-server --open",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently --kill-others \"npm start\" \"npm run server\""
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
