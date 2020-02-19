@@ -1,8 +1,15 @@
-.btn {
+/*.btn {
     display: block;
     border: 1px solid red;
 
     &-green {
         background-color: green;
     }
-}
+}*/
+
+.btnRed {
+        border-radius: unset;
+        border: 2px solid brown;
+        color: brown;
+    }
+

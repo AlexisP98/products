@@ -1,0 +1,28 @@
+.accordion{
+    border: solid lightseagreen;
+}
+
+.contenuto{
+    background-color: white;
+    border-top: solid lightgrey;
+}
+
+.visibile {
+    display: none;
+}
+
+.fa .fa-plus {
+    float: right;
+}
+
+button:focus
+{
+    outline: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.show {
+    display: block;
+}
+

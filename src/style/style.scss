@@ -1,5 +1,13 @@
-@import "~bootstrap-css-only/css/bootstrap.css";
-@import "~bootstrap-css-only/css/bootstrap-grid.css";
-@import "~bootstrap-css-only/css/bootstrap-reboot.css";
+@import "../../node_modules/bootstrap-scss/bootstrap.scss";
+@import "../../node_modules/bootstrap-scss/bootstrap-grid.scss";
+@import "../../node_modules/bootstrap-scss/bootstrap-reboot.scss";
 
 @import "../components/button/button.scss";
+@import "../components/card/card.scss";
+@import "../components/body/body.scss";
+@import "../components/header/header.scss";
+@import "../components/footer/footer.scss";
+@import "../components/accordion/accordion.scss";
+
+@import "../components/card2/card2.scss";
+

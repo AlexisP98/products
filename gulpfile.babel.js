@@ -10,21 +10,20 @@ import rename from "gulp-rename";
 import webpack from "webpack";
 import webpackStream from "webpack-stream";
 import uglify from "gulp-uglify";
-
 const sourceDir = path.resolve(__dirname, 'src');
 const buildDir = path.resolve(__dirname, 'dist');
 const sassOptions = {outputStyle: 'compressed', errLogToConsole: true};
 const dir = path.resolve(__dirname, 'dist');
 const dirCss = path.resolve(__dirname, 'dist/css');
-const srcScssVendor = [
+/* const srcScssVendor = [
     './node_modules/bootstrap-css-only/css/bootstrap-grid.css',
     './node_modules/bootstrap-css-only/css/bootstrap.css',
     './node_modules/bootstrap-css-only/css/bootstrap-reboot.css'
-];
-const srcScss = ['./src/style/*.scss', './src/components/**/*.scss'];
+]; */
+const srcScssWatch = ['./src/style/*.scss', './src/components/**/*.scss'];
+const srcScss = ['./src/style/style.scss'];
 const srcHtml = ["src/pages/*.html", "src/partials/*.hbs", "src/components/**/*.hbs"];
 const scriptSrc = ["src/index.js"];
-
 
 const webpackConf = {
     entry: sourceDir,
@@ -46,7 +45,6 @@ const webpackConf = {
       }]
     }
 };
-
 const style = () => {
     return gulp.src(srcScss)
     .pipe(sass(sassOptions))
@@ -55,16 +53,14 @@ const style = () => {
     .pipe(gulp.dest(dirCss))
     .pipe(browserSync.reload({stream: true}));
 };
-
-const styleVendor = () => {
+/* const styleVendor = () => {
     return gulp.src(srcScssVendor)
     .pipe(sass(sassOptions))
     .pipe(autoPrefixer('last 2 versions'))
     .pipe(concat("vendor.css"))
     .pipe(gulp.dest(dirCss))
     .pipe(browserSync.reload({stream: true}));
-};
-
+}; */
 const scripts = () => {
     return gulp.src(scriptSrc)
       .pipe(webpackStream(webpackConf, webpack))
@@ -72,7 +68,6 @@ const scripts = () => {
       .pipe(gulp.dest(buildDir + "/js"))
       .pipe(browserSync.reload({stream: true}));
   };
-
   
 const compileHtml = () => {
     const templateData = {};
@@ -91,7 +86,6 @@ const compileHtml = () => {
       .pipe(gulp.dest(dir))
       .pipe(browserSync.reload({stream: true}));
   };
-
 const serve = () => {
     browserSync.init({
         server: {
@@ -101,13 +95,11 @@ const serve = () => {
         notify: false,
         injectChanges: true
     });
-
-    gulp.watch(srcScss, gulp.series(style));
+    gulp.watch(srcScssWatch, gulp.series(style));
     gulp.watch(scriptSrc, gulp.series(scripts));
     gulp.watch(srcHtml, gulp.series(compileHtml));
     gulp.watch('./dist/*').on('change', browserSync.reload);
 };
-
-const build = gulp.series(gulp.parallel(style, compileHtml, scripts, styleVendor));
-
+/* const build = gulp.series(gulp.parallel(style, compileHtml, scripts, styleVendor)); */
+const build = gulp.series(gulp.parallel(style, compileHtml, scripts));
 gulp.task('default', gulp.series(build, serve));

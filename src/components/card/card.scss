@@ -1,0 +1,55 @@
+.bgWhite {
+    background-color: white;
+}
+
+.testoHeader{
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bordoFooter {
+    border-top: none;
+}
+
+.body {
+    padding-bottom: 0px;
+}
+
+.col-6 {
+    .valore {
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .campo {
+        margin-bottom: 2px;
+    }
+}
+
+
+/*
+@include media-breakpoint-down(sm) { 
+    .campo {
+        color: brown;
+        font-weight: bold;
+    }
+    .valore {
+        color: red;
+        font-weight: bold;
+    }
+    .marginBottom {
+        margin-bottom: 20px;
+        }
+}*/
+
+@include media-breakpoint-up(sm) {
+.marginBottom {
+        margin-bottom: 20px;
+        }
+}
+
+
+
+
+
