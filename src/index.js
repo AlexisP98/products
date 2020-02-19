@@ -34,18 +34,14 @@ const accordion = document.querySelectorAll('.accordion');
 
     accordion.forEach(item => {
         let bottone = item.querySelector('.btn');
-        let contenuto = item.querySelector('.contenuto');
-        let iconaPiu = item.querySelector('.piu');
-        let iconaMeno = item.querySelector('.meno');
+        let icona = item.querySelector('.fa.fa-plus');
 
+        let contenuto = item.querySelector('.contenuto');
 
         bottone.addEventListener('click', event => {
             contenuto.classList.toggle("visibile");
-
-            if (iconaPiu.hasClass("show")) {
-                iconaPiu.removeClass("show");
-                iconaMeno.addClass("show");
-            }
+            icona.classList.toggle('fa-plus');
+            icona.classList.toggle('fa-minus');
         })
     })
 
