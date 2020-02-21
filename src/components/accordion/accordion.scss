@@ -1,0 +1,31 @@
+.abs
+{
+    &-accordion
+    {
+        &-container
+        {
+            /* border:solid gray 1px; */
+            border:solid lightgray 1px;
+            border-radius:2px;
+            margin:5px 0px;
+        }
+        &-header
+        {
+            font-size:1.2em;
+            padding:10px;
+            /* background-color:#f9f9f9; */
+
+            cursor:pointer;
+        }
+        &-content
+        {
+            padding:20px;
+        }
+        &-icon
+        {
+            float:right;
+            font-size:1.4em;
+            pointer-events:none;
+        }
+    }
+}

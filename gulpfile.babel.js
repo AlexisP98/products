@@ -16,12 +16,13 @@ const buildDir = path.resolve(__dirname, 'dist');
 const sassOptions = {outputStyle: 'compressed', errLogToConsole: true};
 const dir = path.resolve(__dirname, 'dist');
 const dirCss = path.resolve(__dirname, 'dist/css');
-const srcScssVendor = [
+/* const srcScssVendor = [
     './node_modules/bootstrap-css-only/css/bootstrap-grid.css',
     './node_modules/bootstrap-css-only/css/bootstrap.css',
     './node_modules/bootstrap-css-only/css/bootstrap-reboot.css'
-];
-const srcScss = ['./src/style/*.scss', './src/components/**/*.scss'];
+]; */
+const srcScssWatch = ['./src/style/*.scss', './src/components/**/*.scss'];
+const srcScss = ['./src/style/style.scss'];
 const srcHtml = ["src/pages/*.html", "src/partials/*.hbs", "src/components/**/*.hbs"];
 const scriptSrc = ["src/index.js"];
 
@@ -56,14 +57,14 @@ const style = () => {
     .pipe(browserSync.reload({stream: true}));
 };
 
-const styleVendor = () => {
+/* const styleVendor = () => {
     return gulp.src(srcScssVendor)
     .pipe(sass(sassOptions))
     .pipe(autoPrefixer('last 2 versions'))
     .pipe(concat("vendor.css"))
     .pipe(gulp.dest(dirCss))
     .pipe(browserSync.reload({stream: true}));
-};
+}; */
 
 const scripts = () => {
     return gulp.src(scriptSrc)
@@ -102,12 +103,13 @@ const serve = () => {
         injectChanges: true
     });
 
-    gulp.watch(srcScss, gulp.series(style));
+    gulp.watch(srcScssWatch, gulp.series(style));
     gulp.watch(scriptSrc, gulp.series(scripts));
     gulp.watch(srcHtml, gulp.series(compileHtml));
     gulp.watch('./dist/*').on('change', browserSync.reload);
 };
 
-const build = gulp.series(gulp.parallel(style, compileHtml, scripts, styleVendor));
+/* const build = gulp.series(gulp.parallel(style, compileHtml, scripts, styleVendor)); */
+const build = gulp.series(gulp.parallel(style, compileHtml, scripts));
 
 gulp.task('default', gulp.series(build, serve));

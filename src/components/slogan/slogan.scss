@@ -1,0 +1,31 @@
+.abs
+{
+    &-slogan
+    {
+        height:540px;
+
+        @include media-breakpoint-down(sm)
+        {
+            height:405px;
+            /* 270 */
+        }
+
+        /* background: url("https://via.placeholder.com/1920x540") no-repeat center; */
+        background: url("https://www.scalevp.com/sites/default/files/designbig.jpg") no-repeat center;
+        /* https://www.scalevp.com/sites/default/files/designbig.jpg */
+        &-text
+        {
+            font-weight:bold;
+            padding: 0 150px;
+            @include media-breakpoint-down(md)
+            {
+                font-size:37px;
+            }
+            @include media-breakpoint-down(sm)
+            {
+                padding: 0 80px;
+                font-size:30px;
+            }
+        }
+    }
+}

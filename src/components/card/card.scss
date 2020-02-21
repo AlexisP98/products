@@ -1,0 +1,66 @@
+/* @media (max-width:200px)
+{
+    body
+    {
+        writing-mode: sideways-lr;
+        text-orientation: upright;
+    }
+} */
+
+.abs
+{
+    &-card
+    {
+        width:auto;
+        box-shadow:rgba(0,0,0,0.2) 3px 3px 2px;
+
+        /* @include media-breakpoint-down(md)
+        {
+            margin-bottom:30px;
+        } */
+
+        &-header
+        {
+            background-color:white;
+        }
+        &-footer
+        {
+            padding-top:0;
+            border:0;
+            background-color:white;
+        }
+        &-fieldset
+        {
+            margin-bottom:10px;
+        }
+    }
+
+    &-field
+    {
+        &-label
+        {
+            font-weight:bold;
+        }
+    }
+
+    &-btn
+    {
+        &-dred
+        {
+            width:100%;
+            color:darkred;
+            background-color:white;
+            border:solid darkred 2px;
+        }
+        &-dred:hover
+        {
+            background-color:crimson;
+            color:white;
+        }
+        &-dred:focus
+        {
+            background-color:crimson;
+            box-shadow:none;
+        }
+    }
+}
