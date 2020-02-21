@@ -2,6 +2,8 @@
 @import "../../node_modules/bootstrap-scss/bootstrap-grid.scss";
 @import "../../node_modules/bootstrap-scss/bootstrap-reboot.scss";
 
+@import "common.scss";
+
 @import "../components/button/button.scss";
 @import "../components/card/card.scss";
 @import "../components/body/body.scss";

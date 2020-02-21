@@ -1,8 +1,22 @@
 div{
     .immagine-header{
-        background-image: url("https://via.placeholder.com/1500x500");
+        background-image: url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
         background-size: cover;
         background-position: center;
-        height: 500px;
+        height: 555px;
+    }
+
+    .image-container{
+        position: relative;
+    }
+
+    .header-title {
+        color: whitesmoke;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
+
+
